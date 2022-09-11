@@ -1,0 +1,14 @@
+long long maxSubarraySum(int arr[], int n)
+{
+    long long maxendinghere=0,maxsofar=0;
+    for(int i=0;i<n;i++){
+        maxendinghere+=arr[i];
+        if(maxendinghere>maxsofar){
+            maxsofar=maxendinghere;
+        }
+        if(maxendinghere<0){
+            maxendinghere=0;
+        }
+    }
+    return maxsofar;
+}
